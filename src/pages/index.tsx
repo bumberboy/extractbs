@@ -2,10 +2,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 import {Inter} from 'next/font/google'
 import {Box} from "@chakra-ui/react";
+import {trpc} from "../utils/trpc";
 
 const inter = Inter({subsets: ['latin']})
 
 export default function Home() {
+  const hello = trpc.hello.useQuery({text: ' bowwow'})
   return (
     <>
       <Head>
@@ -16,8 +18,9 @@ export default function Home() {
       </Head>
       <main>
         <Box>
-          Hello World!
-
+          Hello {
+          hello.data?.greeting
+        }
         </Box>
       </main>
     </>
