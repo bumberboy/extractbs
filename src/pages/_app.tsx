@@ -1,5 +1,5 @@
 import type { AppType } from 'next/app';
-import {ChakraProvider} from "@chakra-ui/provider";
+import {ChakraProvider} from "@chakra-ui/react";
 import {trpc} from '../utils/trpc'
 
 const MyApp: AppType = ({ Component, pageProps }) => {  return (
